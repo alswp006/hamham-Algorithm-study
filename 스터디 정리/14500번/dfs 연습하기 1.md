@@ -8,6 +8,7 @@ N × M 크기의 얼음 틀이 있다. 구멍이 뚫려 있는 부분은 0, 칸�
 
 <img width="783" alt="image" src="https://github.com/alswp006/hamham-Algorithm-study/assets/102672547/d354e7ff-4cc4-48c1-8982-b796359c74ed">
 
+### 구현 코드
 ``` python
 import sys
 
