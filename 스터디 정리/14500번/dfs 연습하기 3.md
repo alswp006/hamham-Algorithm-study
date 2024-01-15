@@ -31,3 +31,23 @@ while q:
             q.append(node)
 print(answer if distance in answer else -1)
 ```
+
+## 구현 코드 2
+``` python
+n, m, k, x = map(int, input().split())
+dis = [[] for i in range(n + 1)]
+
+for i in range(m):
+    start, end = map(int, input().split())
+    dis[start].append(end)
+
+answer = [99999999 for i in range(n + 1)]
+answer[1] = 0
+for i in range(len(dis)):
+    for j in dis[i] :
+        answer[j] = min(answer[j], answer[i] + 1)
+
+print(answer)
+```
+
+- 구현 코드 1과 구현 코드 2의 차이점은?
