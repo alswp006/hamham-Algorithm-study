@@ -27,3 +27,30 @@ while q:
             q.append((nx, ny))
 print(arr[n-1][m-1])
 ```
+### 구현 코드 복습
+``` python
+from collections import deque
+
+s = open("dfs.txt", "rt")
+
+n,m = map(int, s.readline().split())
+arr = [list(map(int, s.readline().rstrip())) for i in range(n)]
+q = deque()
+q.append((0,0))
+d = [(0,1), (0,-1), (1,0), (-1,0)]
+graph = [[0 for _ in range(m)] for _ in range(n)]
+graph[0][0] = 1
+
+while q:
+    x, y = q.popleft()
+    for i in range(4):
+        nx = x + d[i][0]
+        ny = y + d[i][1]
+        if nx < 0 or nx >= n or ny < 0 or ny >= m or arr[nx][ny] == 0 or graph[nx][ny] != 0:
+            continue
+        q.append((nx, ny))
+        graph[nx][ny] = graph[x][y] + 1
+
+for i in graph:
+    print(i)
+```
